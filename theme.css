@@ -1,0 +1,117 @@
+body {
+  --file-line-width: 100%;
+  --file-line-max-width: 1200px;
+
+  --link-decoration: none;
+  --link-external-decoration: none;
+
+  --table-white-space: pre-wrap;
+  --table-header-size: 0.9em;
+  --table-text-size: 0.9em;
+  --table-line-height: 1.7;
+  --table-header-border-width: 3px;
+
+  --metadata-padding: 0;
+
+  --code-background: var(--background-secondary);
+
+  --h2-border-bottom: 2px var(--color-base-40) solid;
+  --h2-padding-bottom: 5px;
+}
+.cm-inline-code {
+  border-width: var(--border-width);
+  border-color: var(--color-base-30);
+  border-style: solid;
+}
+.theme-light {
+  background-color: var(--background-secondary) !important;
+}
+div.view-content {
+  max-width: var(--file-line-max-width);
+}
+.markdown-rendered h2, 
+.HyperMD-header-2 {
+  padding-bottom: var(--h2-padding-bottom) !important;
+  border-bottom: var(--h2-border-bottom);
+}
+.external-link {
+  padding-bottom: 2px;
+}
+
+/* ==============================================
+  cssclasses hide-properties (Properties View를 숨길 노트에 적용할 CSS) */
+
+.hide-properties {
+  --metadata-display-reading: none;
+  --metadata-display-editing: none;
+}
+
+/* ==============================================
+  cssclasses sidebar (Sidebar로 사용할 노트에 적용할 CSS) */
+
+.sidebar {
+  /* Sidebar 마진 축소 */
+  --file-margins: 5px;
+
+  /* Sidebar의 Properties view 숨기기 */
+  --metadata-display-reading: none;
+  --metadata-display-editing: none;
+
+  /* Sidebar의 폰트 크기 조정 */
+  --font-text-size: var(--font-ui-small);
+  --table-header-size: var(--font-text-size);
+  --table-text-size: var(--font-text-size);
+  --h2-size: var(--font-text-size);
+  --h3-size: var(--font-text-size);
+  --h4-size: var(--font-text-size);
+  --h5-size: var(--font-text-size);
+  --h6-size: var(--font-text-size);
+
+  --h2-border-bottom: 1px var(--table-border-color) solid;
+}
+
+/* ==============================================
+  Properties View */
+
+.metadata-container {
+  margin: 0;
+}
+@media screen and (min-width: 1024px) {
+  [data-type="markdown"] .metadata-properties {
+    display: grid;
+    grid: auto-flow / 50% 50%;
+  }
+  [data-type="markdown"] .metadata-properties .metadata-property-value {
+    align-items: start;
+  }
+}
+
+/* ==============================================
+  Table */
+
+.markdown-rendered table,
+.markdown-rendered div:has(table) {
+  width: 100% !important;
+}
+.markdown-rendered td,
+.table-view-table > tbody > tr > td,
+.markdown-rendered table thead tr th {
+  line-height: var(--table-line-height);
+  border-width: 0 !important;
+  border-bottom: var(--table-border-width) var(--table-border-color) solid !important;
+}
+.markdown-rendered table thead tr th {
+  font-size: var(--table-header-size);
+  border-bottom-width: var(--table-header-border-width);
+}
+.markdown-rendered tbody tr:nth-child(2n) {
+  background-color: var(--background-secondary);
+}
+
+/* ==============================================
+  Community Plugins */
+
+/* Dataview Task */
+.cm-preview-code-block .dataview.result-group {
+  text-indent : -40px;
+}
